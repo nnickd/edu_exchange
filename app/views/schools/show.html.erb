@@ -29,14 +29,14 @@
 <% @school.students.each do |student| %>
 <p>
     <% if student.school == @school && student.services.length > 0 %>
-      <h4><%= student.name %></h4>
-      <% student.services.each do |service| %>
-      <li>
+    <h4><%= student.name %></h4>
+    <% student.services.each do |service| %>
+    <li>
         <%= link_to service.title, service %>
-        <!-- <br> -->
-        <li><%= service.description %></li>
-        </li>
-      <% end %>
+        <br>
+        <%= service.description %>
+    </li>
+    <% end %>
     <% end %>
 </p>
 <% end %>
@@ -46,3 +46,5 @@
 <%= link_to 'Back', schools_path %>
 |
 <%= link_to 'Home', '/' %>
+|
+<%= link_to 'Index', '/index' %>
