@@ -1,4 +1,4 @@
 class Service < ApplicationRecord
-  validates :name, :description, :student_id, presence: true
+  validates :title, :description, :student_id, presence: true
   belongs_to :student
 end

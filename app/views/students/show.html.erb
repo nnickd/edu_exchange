@@ -20,7 +20,7 @@
 <h3>Services</h3>
 <% @student.services.each do |service| %>
 <p>
-    <%= service.name %>
+    <%= service.title %>
     <%= service.description %>
     <%= link_to 'Show', service %>
     <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
