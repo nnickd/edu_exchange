@@ -1,3 +1,5 @@
+<h1>School</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -13,7 +15,7 @@
 <h3>Students</h3>
 <% @school.students.each do |student| %>
   <p>
-    <%= student.name %>
+    <%= link_to student.name, student %>
     <br>
     Added on: <%= student.created_at %>
   </p>

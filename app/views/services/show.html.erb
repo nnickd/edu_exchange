@@ -1,3 +1,5 @@
+<h1>Service</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,7 +14,7 @@
 
 <p>
   <strong>Student:</strong>
-  <%= @service.student.name %>
+  <%= link_to @service.student.name, @service.student %>
 </p>
 
 <%= link_to 'Edit', edit_service_path(@service) %> |

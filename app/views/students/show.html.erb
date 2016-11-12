@@ -1,34 +1,40 @@
+<h1>Student</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @student.name %>
+    <strong>Name:</strong>
+    <%= @student.name %>
 </p>
 
 <p>
-  <strong>School:</strong>
-  <%= @student.school.name %>
+    <strong>School:</strong>
+    <%= link_to @student.school.name, @student.school %>
 </p>
 
 <p>
-  <strong>Bio:</strong>
-  <%= @student.bio %>
+    <strong>Bio:</strong>
+    <%= @student.bio %>
 </p>
 
 <h3>Services</h3>
 <% @student.services.each do |service| %>
-  <p>
+<p>
     <%= service.name %>
     <%= service.description %>
+    <%= link_to 'Show', service %>
+    <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <br>
-    Added on: <%= service.created_at %>
-  </p>
-  <% end %>
+    Added on:
+    <%= service.created_at %>
+</p>
+<% end %>
 
-  <h3>New Service</h3>
-  <%= render 'services/form', service: @service %>
+<h3>New Service</h3>
+<%= render 'services/form', service: @service %>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Edit', edit_student_path(@student) %>
+|
 
 <% if @student.school.nil? %>
 <%= link_to 'Back', students_path %>
