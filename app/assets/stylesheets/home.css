@@ -24,6 +24,10 @@
   display: flex;
 }
 
+.link {
+  display: flex;
+}
+
 h1 {
   text-align: center;
 }
@@ -33,7 +37,6 @@ h1 {
   flex-direction: column;
   text-align: center;
   color: red;
-  /*top: 100%;*/
 }
 
 #education-image {
