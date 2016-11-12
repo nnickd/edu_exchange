@@ -10,5 +10,17 @@
   <%= @school.location %>
 </p>
 
+<h3>Students</h3>
+<% @school.students.each do |student| %>
+  <p>
+    <%= student.name %>
+    <br>
+    Added on: <%= student.created_at %>
+  </p>
+  <% end %>
+
+<h3>New Student</h3>
+<%= render 'students/form', student: @student %>
+
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>

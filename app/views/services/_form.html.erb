@@ -21,10 +21,18 @@
     <%= f.text_area :description %>
   </div>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :student_id %>
     <%= f.text_field :student_id %>
+  </div> -->
+  <% if @student.nil? %>
+  <div class="field">
+    <%= f.label :student_id %><br>
+    <%= f.text_field :student_id %>
   </div>
+<% else %>
+  <%= f.hidden_field :student_id, value: @student.id %>
+<% end %>
 
   <div class="actions">
     <%= f.submit %>

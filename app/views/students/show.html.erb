@@ -7,7 +7,7 @@
 
 <p>
   <strong>School:</strong>
-  <%= @student.school %>
+  <%= @student.school.name %>
 </p>
 
 <p>
@@ -15,5 +15,23 @@
   <%= @student.bio %>
 </p>
 
+<h3>Services</h3>
+<% @student.services.each do |service| %>
+  <p>
+    <%= service.name %>
+    <%= service.description %>
+    <br>
+    Added on: <%= service.created_at %>
+  </p>
+  <% end %>
+
+  <h3>New Service</h3>
+  <%= render 'services/form', service: @service %>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
+
+<% if @student.school.nil? %>
 <%= link_to 'Back', students_path %>
+<% else %>
+<%= link_to 'Back', @student.school %>
+<% end %>
