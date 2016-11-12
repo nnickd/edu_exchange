@@ -28,15 +28,14 @@
 <h3>Services</h3>
 <% @school.students.each do |student| %>
 <p>
-    <% if student.school == @school %>
-      <%= link_to student.name, student %>
-      <br>
+    <% if student.school == @school && student.services.length > 0 %>
+      <h4><%= student.name %></h4>
       <% student.services.each do |service| %>
+      <li>
         <%= link_to service.title, service %>
-        <br>
-        Added on:
-        <%= student.created_at %>
-        <br>
+        <!-- <br> -->
+        <li><%= service.description %></li>
+        </li>
       <% end %>
     <% end %>
 </p>

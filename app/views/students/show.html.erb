@@ -23,7 +23,7 @@
     <%= service.title %>
     <%= service.description %>
     <%= link_to 'Show', service %>
-    <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
     <br>
     Added on:
     <%= service.created_at %>
