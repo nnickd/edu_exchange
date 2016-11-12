@@ -2,3 +2,47 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#universe {
+  display: flex;
+  flex-direction: column;
+}
+
+#schools-c{
+  display: flex;
+}
+#students-c{
+  display: flex;
+}
+#services-c{
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
+
+#intro-p {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: red;
+  /*top: 100%;*/
+}
+
+#education-image {
+  height: 400px;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+}
+#list-c {
+  display: flex;
+  flex-direction: row;
+}

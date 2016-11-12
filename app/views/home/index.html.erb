@@ -1,6 +1,12 @@
-<h1>Home</h1>
-
-<%= link_to 'schools', schools_path %>
+<div id="universe">
+<h1>Welcome to EDU Exchange!</h1>
+<div id="intro-p">
+  <div id="education-image"><%= image_tag('education.jpg')%></div>
+    <p>Have skills but lacking funds? EDU Exchange is an online community where we allow students to exchange skills instead of cash. Fantastic at Science but suck at Math? Post your skills here and match up with other students in your area to trade your knowledge for theirs.</p>
+  </div>
+  <div id="list-c">
+<div id="schools-c">
+<%= link_to 'Schools', schools_path %>
 <table>
   <thead>
     <tr>
@@ -22,8 +28,10 @@
     <% end %>
   </tbody>
 </table>
+</div>
 <br>
-<%= link_to 'students', students_path %>
+<div id="students-c">
+<%= link_to 'Students', students_path %>
 <table>
   <thead>
     <tr>
@@ -47,8 +55,10 @@
     <% end %>
   </tbody>
 </table>
+</div>
 <br>
-<%= link_to 'services', services_path %>
+<div id="services-c">
+<%= link_to 'Services', services_path %>
 <table>
   <thead>
     <tr>
@@ -72,3 +82,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
+
+</div>
