@@ -3,27 +3,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @school.name %>
+    <strong>Name:</strong>
+    <%= @school.name %>
 </p>
 
 <p>
-  <strong>Location:</strong>
-  <%= @school.location %>
+    <strong>Location:</strong>
+    <%= @school.location %>
 </p>
 
 <h3>Students</h3>
 <% @school.students.each do |student| %>
-  <p>
+<p>
     <%= link_to student.name, student %>
     <br>
-    Added on: <%= student.created_at %>
-  </p>
-  <% end %>
+    Added on:
+    <%= student.created_at %>
+</p>
+<% end %>
 
 <h3>New Student</h3>
 <%= render 'students/form', student: @student %>
 
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %> |
+<h3>Services</h3>
+<% @school.students.each do |student| %>
+<p>
+    <% if student.school == @school %>
+      <%= link_to student.name, student %>
+      <br>
+      <% student.services.each do |service| %>
+        <%= link_to service.name, service %>
+        <br>
+        Added on:
+        <%= student.created_at %>
+        <br>
+      <% end %>
+    <% end %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_school_path(@school) %>
+|
+<%= link_to 'Back', schools_path %>
+|
 <%= link_to 'Home', '/' %>
