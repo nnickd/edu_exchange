@@ -4,4 +4,7 @@ class HomeController < ApplicationController
     @students = Student.all
     @services = Service.all
   end
+  
+  def home
+  end
 end

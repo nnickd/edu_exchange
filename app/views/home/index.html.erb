@@ -1,88 +1,78 @@
-<div id="universe">
-<h1>Welcome to EDU Exchange!</h1>
-<div id="intro-p">
-  <div id="education-image"><%= image_tag('education.jpg')%></div>
-    <p>Have skills but lacking funds? EDU Exchange is an online community where we allow students to exchange skills instead of cash. Fantastic at Science but suck at Math? Post your skills here and match up with other students in your area to trade your knowledge for theirs.</p>
-  </div>
-  <div id="list-c">
 <div id="schools-c">
 <%= link_to 'Schools', schools_path %>
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
 
-  <tbody>
-    <% @schools.each do |school| %>
-      <tr>
-        <td><%= school.name %></td>
-        <td><%= school.location %></td>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<tbody>
+  <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.name %></td>
+      <td><%= school.location %></td>
+      <td><%= link_to 'Show', school %></td>
+      <td><%= link_to 'Edit', edit_school_path(school) %></td>
+      <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
 </table>
 </div>
 <br>
 <div id="students-c">
 <%= link_to 'Students', students_path %>
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>School</th>
-      <th>Bio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>School</th>
+    <th>Bio</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
 
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.name %></td>
-        <td><%= student.school.name %></td>
-        <td><%= student.bio %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<tbody>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.name %></td>
+      <td><%= student.school.name %></td>
+      <td><%= student.bio %></td>
+      <td><%= link_to 'Show', student %></td>
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>
+      <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>
 </table>
 </div>
 <br>
 <div id="services-c">
 <%= link_to 'Services', services_path %>
 <table>
-  <thead>
+<thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Student</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @services.each do |service| %>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Student</th>
-      <th colspan="3"></th>
+      <td><%= service.title %></td>
+      <td><%= service.description %></td>
+      <td><%= service.student.name %></td>
+      <td><%= link_to 'Show', service %></td>
+      <td><%= link_to 'Edit', edit_service_path(service) %></td>
+      <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @services.each do |service| %>
-      <tr>
-        <td><%= service.title %></td>
-        <td><%= service.description %></td>
-        <td><%= service.student.name %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <% end %>
+</tbody>
 </table>
-</div>
-</div>
-
 </div>

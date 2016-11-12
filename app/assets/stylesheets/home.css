@@ -42,7 +42,8 @@ h1 {
   display: flex;
   padding: 10px;
 }
-#list-c {
-  display: flex;
-  flex-direction: row;
+
+#home-links {
+display: flex;
+justify-content: space-around;
 }

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :services
   resources :students
   resources :schools
-  get '' => 'home#index'
+  get '' => 'home#home'
+  get 'index' => 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
