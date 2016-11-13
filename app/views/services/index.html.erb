@@ -1,13 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_tag(services_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "service title" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-
-<% if @services.find_by(title: @search) %>
-<% @services = @services.where(title: @search) %>
-<% end %>
+<%= render 'search' %>
 
 <h1>Services</h1>
 <%= render 'table' %>

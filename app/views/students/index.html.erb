@@ -1,13 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_tag(students_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "name" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-
-<% if @students.find_by(name: @search) %>
-<% @students = @students.where(name: @search) %>
-<% end %>
+<%= render 'search' %>
 
 <h1>Students</h1>
 <%= render 'table' %>
