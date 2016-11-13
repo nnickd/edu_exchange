@@ -4,15 +4,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="school-search">
-
-<%= form_tag(schools_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "school name" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-
-<% if @schools.find_by(name: @search) %>
-<% @schools = @schools.where(name: @search) %>
-<% end %>
+<%= render 'search' %>
 </div>
 
 <div class="school-table">
@@ -21,7 +13,6 @@
 </div>
 
 <div class="school-links">
-
 <%= link_to 'New School', new_school_path %> |
 <%= link_to 'Home', '/' %> |
 <%= link_to 'Index', '/index' %>
