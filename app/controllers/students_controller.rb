@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @s_name = params[:s_name]
   end
 
   # GET /students/1

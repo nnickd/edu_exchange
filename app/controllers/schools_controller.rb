@@ -5,6 +5,7 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @schools = School.all
+    @search = params[:search]
   end
 
   # GET /schools/1
