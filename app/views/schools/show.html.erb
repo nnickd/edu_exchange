@@ -1,3 +1,6 @@
+<div class="school-body">
+<div class="school-contents">
+
 <h1>School</h1>
 
 <p id="notice"><%= notice %></p>
@@ -23,26 +26,29 @@
 </li>
 </p>
 <% end %>
+<div>
+  <h3>New Student</h3>
+  <%= render 'students/form', student: @student %>
+</div>
 
-<h3>New Student</h3>
-<%= render 'students/form', student: @student %>
-
-<h3>Services</h3>
-<% @school.students.each do |student| %>
-<p>
-<% if student.school == @school && student.services.length > 0 %>
-<h4><%= student.name %></h4>
-<% student.services.each do |service| %>
-<li>
-    <%= link_to service.title, service %>
-    <br>
-    <%= service.description %>
-</li>
-<% end %>
-<% end %>
-</p>
-<% end %>
-
+<div>
+  <h3>Services</h3>
+  <% @school.students.each do |student| %>
+  <p>
+  <% if student.school == @school && student.services.length > 0 %>
+  <h4><%= student.name %></h4>
+  <% student.services.each do |service| %>
+  <li>
+      <%= link_to service.title, service %>
+      <br>
+      <%= service.description %>
+  </li>
+  <% end %>
+  <% end %>
+  </p>
+  <% end %>
+</div>
+<div class="school-links">
 <%= link_to 'Edit', edit_school_path(@school) %>
 |
 <%= link_to 'Back', schools_path %>
@@ -50,3 +56,6 @@
 <%= link_to 'Home', '/' %>
 |
 <%= link_to 'Index', '/index' %>
+</div>
+</div>
+</div>

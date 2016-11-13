@@ -2,3 +2,42 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+body {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+a, a:visited {
+  color: #660099;
+}
+.school-body {
+  color: white;
+  position: absolute;
+  display: flex;
+  background-image: url('chalkboard.jpg');
+  height: 100%;
+  width: 100%;
+}
+
+.school-contents {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 300px;
+
+}
+
+.school-search {
+  display: flex;
+  margin: auto;
+}
+.school-table {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.school-links {
+  display: flex;
+  margin: auto;
+}
