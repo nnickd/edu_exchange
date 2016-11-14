@@ -11,13 +11,25 @@ body {
 a, a:visited {
   color: #660099;
 }
+
+#school-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
 .school-body {
   color: white;
   position: absolute;
   display: flex;
+  flex-direction: column;
   background-image: url('chalkboard.jpg');
   height: 100%;
   width: 100%;
+}
+
+.school-body h1 {
+text-align: center;
+font-size: 6em;
 }
 
 .school-contents {
@@ -25,19 +37,26 @@ a, a:visited {
   flex-direction: column;
   margin: auto;
   width: 300px;
-
+  margin-top: 0;
 }
 
 .school-search {
   display: flex;
-  margin: auto;
+  justify-content: flex-end;
+  /*margin-right: 0;*/
 }
 .school-table {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  /*margin: auto;*/
+}
+.school-table th, .school-table td {
+  font-size: 2em;
+  height: 2em;
+  width: 2em;
 }
 .school-links {
   display: flex;
-  margin: auto;
+  justify-content: space-between;
+  width: 20em;
 }
