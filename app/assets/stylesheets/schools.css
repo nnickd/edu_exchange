@@ -6,68 +6,67 @@
 body {
   margin-left: 0;
   margin-top: 0;
+  background-image: url('chalkboard.jpg');
 }
 
 a, a:visited {
   color: #D395E6;
 }
 
-.school-nav {
+.nav {
   display: flex;
   justify-content: space-between;
-  /*padding: 1em;*/
 }
-.school-body {
+.container {
   color: white;
   position: absolute;
   display: flex;
   flex-direction: column;
-  background-image: url('chalkboard.jpg');
   height: 100%;
   width: 100%;
 }
 
-.school-body h1 {
+.container h1 {
 text-align: center;
 font-size: 6em;
 }
 
-.school-search {
+.searcher {
   padding: 1em;
 
   display: flex;
   justify-content: flex-end;
   width: 70%;
 }
-.school-search input {
+.searcher input {
   height: 41.11px;
 }
-input#search {
+input#searcher {
   width: 300px;
 }
-.school-table {
+.list {
   display: flex;
   flex-direction: column;
   margin: auto;
   margin-top: 0;
 }
-.school-table a{
+.list a{
   line-height: 1.2em;
 }
-.school-table th, .school-table td {
+.list th, .list td {
   font-size: 2em;
   height: 2em;
   padding: 0 0.5em;
   text-align: center;
 }
-.school-links {
+.links {
   padding: 1em;
   display: flex;
   justify-content: space-between;
   width: 30%;
 }
 
-.school-links a {
+.links a {
   font-size: 2em;
   margin: auto;
   padding: 0.5em;

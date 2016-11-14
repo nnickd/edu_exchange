@@ -1,12 +1,12 @@
-<div class="school-body">
+<div class="container">
 
-<div class="school-nav">
-  <div class="school-links">
+<div class="nav">
+  <div class="links">
   <%= link_to 'New School', new_school_path %>
   <%= link_to 'Home', '/' %>
   <%= link_to 'Index', '/index' %>
   </div>
-  <div class="school-search">
+  <div class="searcher">
   <%= render 'search' %>
   </div>
 </div>
@@ -14,7 +14,7 @@
   <h1>Schools</h1>
 
 
-    <div class="school-table">
+    <div class="list">
     <%= render 'table' %>
     </div>
 
