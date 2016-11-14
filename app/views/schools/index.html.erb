@@ -1,23 +1,24 @@
 <div class="container">
 
-<div class="nav">
-  <div class="links">
-  <%= link_to 'New School', new_school_path %>
-  <%= link_to 'Home', '/' %>
-  <%= link_to 'Index', '/index' %>
-  </div>
-  <div class="searcher">
-  <%= render 'search' %>
-  </div>
-</div>
-
-  <h1>Schools</h1>
-
-
-    <div class="list">
-    <%= render 'table' %>
+    <div class="nav">
+        <div class="links">
+            <!-- <%= link_to 'New School', new_school_path %> -->
+            <%= link_to 'Home', '/' %>
+            <%= link_to 'Index', '/index' %>
+        </div>
+        <div class="searcher">
+            <%= render 'search' %>
+        </div>
+    </div>
+    <div id="new-school">
+        <%= render 'form', school: @school %>
     </div>
 
+    <h1>Schools</h1>
 
-  <p id="notice"><%= notice %></p>
+    <div class="list">
+        <%= render 'table' %>
+    </div>
+
+    <p id="notice"><%= notice %></p>
 </div>

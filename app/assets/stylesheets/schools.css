@@ -33,7 +33,6 @@ font-size: 6em;
 
 .searcher {
   padding: 1em;
-
   display: flex;
   justify-content: flex-end;
   width: 70%;
@@ -44,6 +43,13 @@ font-size: 6em;
 input#searcher {
   width: 300px;
 }
+
+#new-school {
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .list {
   display: flex;
   flex-direction: column;
