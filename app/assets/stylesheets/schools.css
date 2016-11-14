@@ -9,13 +9,13 @@ body {
 }
 
 a, a:visited {
-  color: #660099;
+  color: #D395E6;
 }
 
-#school-nav {
+.school-nav {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  /*padding: 1em;*/
 }
 .school-body {
   color: white;
@@ -32,31 +32,43 @@ text-align: center;
 font-size: 6em;
 }
 
-.school-contents {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  width: 300px;
-  margin-top: 0;
-}
-
 .school-search {
+  padding: 1em;
+
   display: flex;
   justify-content: flex-end;
-  /*margin-right: 0;*/
+  width: 70%;
+}
+.school-search input {
+  height: 41.11px;
+}
+input#search {
+  width: 300px;
 }
 .school-table {
   display: flex;
   flex-direction: column;
-  /*margin: auto;*/
+  margin: auto;
+  margin-top: 0;
+}
+.school-table a{
+  line-height: 1.2em;
 }
 .school-table th, .school-table td {
   font-size: 2em;
   height: 2em;
-  width: 2em;
+  padding: 0 0.5em;
+  text-align: center;
 }
 .school-links {
+  padding: 1em;
   display: flex;
   justify-content: space-between;
-  width: 20em;
+  width: 30%;
+}
+
+.school-links a {
+  font-size: 2em;
+  margin: auto;
+  padding: 0.5em;
 }

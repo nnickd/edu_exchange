@@ -10,12 +10,9 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= link_to student.name, student %></td>
+        <td><%= link_to student.name, student %>   <%= link_to fa_icon('pencil'), edit_student_path(student) %>   <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= student.school.name %></td>
         <td><%= student.bio %></td>
-        <!-- <td><%= link_to 'Show', student %></td> -->
-        <td><%= link_to fa_icon('pencil'), edit_student_path(student) %></td>
-        <td><%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
