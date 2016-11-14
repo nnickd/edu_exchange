@@ -1,21 +1,25 @@
 <div class="school-body">
-<div class="school-contents">
 
-<p id="notice"><%= notice %></p>
-
-<div class="school-search">
-<%= render 'search' %>
+<div id="school-nav">
+  <div class="school-links">
+  <%= link_to 'New School', new_school_path %>
+  <%= link_to 'Home', '/' %>
+  <%= link_to 'Index', '/index' %>
+  </div>
+  <div class="school-search">
+  <%= render 'search' %>
+  </div>
 </div>
 
-<div class="school-table">
   <h1>Schools</h1>
-<%= render 'table' %>
-</div>
 
-<div class="school-links">
-<%= link_to 'New School', new_school_path %> |
-<%= link_to 'Home', '/' %> |
-<%= link_to 'Index', '/index' %>
-</div>
-</div>
+  <div class="school-contents">
+
+    <div class="school-table">
+    <%= render 'table' %>
+    </div>
+
+
+  </div>
+  <p id="notice"><%= notice %></p>
 </div>
