@@ -1,12 +1,22 @@
 <div class="container">
+  <div class='nav'>
+
     <div class="links">
-    <%= link_to fa_icon('chevron-left'), schools_path %>
-    <%= link_to fa_icon('home'), '/' %>
-    <%= link_to fa_icon('book'), '/index' %>
+        <%= link_to fa_icon('chevron-left'), schools_path %>
+        <%= link_to fa_icon('home'), '/' %>
+        <%= link_to fa_icon('book'), '/index' %>
+    </div>
+    <%= render 'students/formbar', student: @student %>
+
 </div>
     <div class="school-contents">
 
         <h1>School</h1>
+
+        <span>
+            <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
+            <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
 
         <span>
             <strong>Name:</strong>
@@ -18,33 +28,30 @@
             <%= @school.location %>
         </span>
 
-        <div>
-            <h3>New Student</h3>
-            <%= render 'students/form', student: @student %>
-        </div>
+
 
         <h3>Students</h3>
         <% @school.students.each do |student| %>
-            <span>
-              <%= link_to student.name, student %>
-                <%= link_to fa_icon('pencil'), edit_student_path(student) %>
-                <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </span>
+        <span>
+            <%= link_to student.name, student %>
+            <%= link_to fa_icon('pencil'), edit_student_path(student) %>
+            <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
         <% end %>
 
         <div>
             <h3>Services</h3>
             <% @school.students.each do |student| %>
-              <% if student.school == @school && student.services.length > 0 %>
-                <% student.services.each do |service| %>
-                    <span>
-                        <%= link_to service.title, service %>
-                        <%= link_to fa_icon('pencil'), edit_service_path(service) %>
-                        <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
-                    </span>
-                    <br>
-                    <%= service.description %>
-              <% end %>
+            <% if student.school == @school && student.services.length > 0 %>
+            <% student.services.each do |service| %>
+            <span>
+                <%= link_to service.title, service %>
+                <%= link_to fa_icon('pencil'), edit_service_path(service) %>
+                <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span>
+            <br>
+            <%= service.description %>
+            <% end %>
             <% end %>
             <% end %>
         </div>

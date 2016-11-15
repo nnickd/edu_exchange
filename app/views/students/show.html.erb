@@ -6,12 +6,18 @@
             <%= link_to fa_icon('home'), '/' %>
             <%= link_to fa_icon('book'), '/index' %>
         </div>
+        <%= render 'services/formbar', service: @service %>
+
 
     </div>
     <div class="school-contents">
 
         <h1>Student</h1>
 
+        <span>
+          <%= link_to fa_icon('pencil'), edit_student_path(@student) %>
+          <%= link_to fa_icon('trash'), @student, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
         <span>
             <strong>Name:</strong>
             <%= @student.name %>
@@ -27,6 +33,7 @@
             <%= @student.bio %>
         </span>
 
+
         <h3>Services</h3>
         <% @student.services.each do |service| %>
         <span>
@@ -37,8 +44,8 @@
         <%= service.description %>
         <% end %>
 
-        <h3>New Service</h3>
-        <%= render 'services/form', service: @service %>
+        <!-- <h3>New Service</h3> -->
+        <!-- <%= render 'services/form', service: @service %> -->
 
         <p id="notice"><%= notice %></p>
 
