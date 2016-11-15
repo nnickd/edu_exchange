@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="links">
+    <div class="top-bar">
         <%= link_to fa_icon('chevron-left'), schools_path %>
         <%= link_to fa_icon('home'), '/' %>
         <%= link_to fa_icon('book'), '/index' %>
     </div>
-    <div class="edit-box">
+    <div class="edit-box row align-center">
 
         <%= render 'form', school: @school %>
 

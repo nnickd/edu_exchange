@@ -1,5 +1,9 @@
+<li>
 <%= form_tag(schools_path, :method => "get", id: "search-form") do %>
-    <%= submit_tag "Search", :name => nil %>
+</li>
+<li>
+    <%= submit_tag "Search", :name => nil, class: 'button' %>
+</li>
     <%= text_field_tag :search, params[:search], placeholder: "school name" %>
 <% end %>
 

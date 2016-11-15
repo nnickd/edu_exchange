@@ -1,6 +1,10 @@
+<li>
 <%= form_tag(services_path, :method => "get", id: "search-form") do %>
+</li>
     <%= text_field_tag :search, params[:search], placeholder: "service title" %>
-    <%= submit_tag "Search", :name => nil %>
+<li>
+    <%= submit_tag "Search", :name => nil, class: 'button' %>
+</li>
 <% end %>
 
 <% if @services.find_by(title: @search) %>

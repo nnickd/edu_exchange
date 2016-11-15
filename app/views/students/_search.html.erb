@@ -1,6 +1,11 @@
+<li>
+
 <%= form_tag(students_path, :method => "get", id: "search-form") do %>
+</li>
     <%= text_field_tag :search, params[:search], placeholder: "student name" %>
-    <%= submit_tag "Search", :name => nil %>
+    <li>
+    <%= submit_tag "Search", :name => nil, class: 'button' %>
+  </li>
 <% end %>
 
 <% if @students.find_by(name: @search) %>

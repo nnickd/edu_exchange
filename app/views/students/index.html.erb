@@ -1,19 +1,21 @@
 <div class="container">
 
-<div class="nav">
+<div class="top-bar">
   <div class="links" id="mid">
     <%= link_to fa_icon('home'), '/' %>
     <%= link_to fa_icon('book'), '/index' %>
     <%= link_to fa_icon('chevron-left'), schools_path %>
     <%= link_to fa_icon('chevron-right'), services_path %>
   </div>
-  <div class="searcher">
-  <%= render 'search' %>
+  <div class="top-bar-right">
+      <ul class="menu">
+          <%= render 'search' %>
+      </ul>
   </div>
 </div>
 
-<h1>Students</h1>
-<div class="list">
+<h1 class="row align-center">Students</h1>
+<div class="row align-center small-3">
 <%= render 'table' %>
 </div>
 

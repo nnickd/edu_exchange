@@ -1,4 +1,4 @@
-*{
+/**{
   box-sizing: border-box;
 }
 
@@ -106,4 +106,4 @@
 .link-buttons:active {
   position:relative;
 	top:1px;
-}
+}*/

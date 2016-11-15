@@ -1,55 +1,48 @@
 <div class="container">
-  <div class='nav'>
+    <div class='top-bar'>
 
-    <div class="links">
-        <%= link_to fa_icon('chevron-left'), schools_path %>
-        <%= link_to fa_icon('home'), '/' %>
-        <%= link_to fa_icon('book'), '/index' %>
+        <div class="">
+            <%= link_to fa_icon('chevron-left'), schools_path %>
+            <%= link_to fa_icon('home'), '/' %>
+            <%= link_to fa_icon('book'), '/index' %>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+              <%= render 'students/formbar', student: @student %>
+            </ul>
+        </div>
+
     </div>
-    <%= render 'students/formbar', student: @student %>
+    <div class="columns align-center">
 
-</div>
-    <div class="school-contents">
-
-        <h1>School</h1>
-
-        <span>
+      <h1 class="row align-center">School</h1>
+        <div class="row align-center">
             <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
             <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </span>
-
-        <span>
             <strong>Name:</strong>
             <%= @school.name %>
-        </span>
-
-        <span>
             <strong>Location:</strong>
             <%= @school.location %>
-        </span>
+        </div>
 
-
-
-        <h3>Students</h3>
-        <% @school.students.each do |student| %>
-        <span>
+        <h3 class="row align-center">Students</h3>
+        <div class="row align-center">
+            <% @school.students.each do |student| %>
             <%= link_to student.name, student %>
             <%= link_to fa_icon('pencil'), edit_student_path(student) %>
             <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </span>
-        <% end %>
+            <% end %>
+        </div>
 
-        <div>
-            <h3>Services</h3>
+        <h3 class="row align-center">Services</h3>
+        <div class="row align-center">
             <% @school.students.each do |student| %>
             <% if student.school == @school && student.services.length > 0 %>
             <% student.services.each do |service| %>
-            <span>
-                <%= link_to service.title, service %>
-                <%= link_to fa_icon('pencil'), edit_service_path(service) %>
-                <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </span>
-            <br>
+            <%= link_to service.title, service %>
+            <%= link_to fa_icon('pencil'), edit_service_path(service) %>
+            <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
+
             <%= service.description %>
             <% end %>
             <% end %>
