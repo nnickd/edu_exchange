@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-h3, h1, p {
-  color: white;
-}
-
 #universe {
   display: flex;
   flex-direction: column;

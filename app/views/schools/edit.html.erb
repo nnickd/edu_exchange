@@ -1,6 +1,13 @@
-<h1>Editing School</h1>
+<div class="container">
+    <div class="links">
+        <%= link_to fa_icon('chevron-left'), schools_path %>
+        <%= link_to fa_icon('home'), '/' %>
+        <%= link_to fa_icon('book'), '/index' %>
+    </div>
+    <div class="edit-box">
 
-<%= render 'form', school: @school %>
+        <%= render 'form', school: @school %>
 
-<%= link_to 'Show', @school %> |
-<%= link_to 'Back', schools_path %>
+        <%= link_to 'Show', @school %>
+    </div>
+</div>

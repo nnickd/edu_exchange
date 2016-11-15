@@ -1,28 +1,38 @@
-<h1>Service</h1>
+<div class="container">
 
-<p id="notice"><%= notice %></p>
+    <div class='nav'>
 
-<p>
-  <strong>Title:</strong>
-  <%= @service.title %>
-</p>
+        <div class="links">
+            <%= link_to fa_icon('chevron-left'), @service.student %>
+            <%= link_to fa_icon('home'), '/' %>
+            <%= link_to fa_icon('book'), '/index' %>
+        </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
+    </div>
 
-<p>
-  <strong>Student:</strong>
-  <%= link_to @service.student.name, @service.student %>
-</p>
+    <div class="school-contents">
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
+        <h1>Service</h1>
 
-<% if @service.student.nil? %>
-<%= link_to 'Back', services_path %>
-<% else %>
-<%= link_to 'Back', @service.student %>
-<% end %> |
-<%= link_to 'Home', '/' %> |
-<%= link_to 'Index', '/index' %>
+        <span>
+            <strong>Title:</strong>
+            <%= @service.title %>
+        </span>
+
+        <span>
+            <strong>Description:</strong>
+            <%= @service.description %>
+        </span>
+
+        <span>
+            <strong>Student:</strong>
+            <%= link_to @service.student.name, @service.student %>
+        </span>
+        <span>
+            <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
+            <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+    </div>
+
+    <p id="notice"><%= notice %></p>
+</div>

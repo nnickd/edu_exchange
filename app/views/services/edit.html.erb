@@ -1,6 +1,14 @@
-<h1>Editing Service</h1>
+<div class="container">
+    <div class="links">
+        <%= link_to fa_icon('chevron-left'), services_path %>
+        <%= link_to fa_icon('home'), '/' %>
+        <%= link_to fa_icon('book'), '/index' %>
+    </div>
+    <div class="edit-box">
 
-<%= render 'form', service: @service %>
+        <%= render 'form', service: @service %>
 
-<%= link_to 'Show', @service %> |
-<%= link_to 'Back', services_path %>
+        <%= link_to 'Show', @service %>
+
+    </div>
+</div>

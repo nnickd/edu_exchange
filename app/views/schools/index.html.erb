@@ -2,16 +2,16 @@
 
     <div class="nav">
         <div class="links">
-            <!-- <%= link_to 'New School', new_school_path %> -->
-            <%= link_to 'Home', '/' %>
-            <%= link_to 'Index', '/index' %>
+            <%= link_to fa_icon('home'), '/' %>
+            <%= link_to fa_icon('book'), '/index' %>
+            <%= link_to fa_icon('chevron-right'), students_path %>
+        </div>
+        <div id="new-school">
+          <%= render 'form', school: @school %>
         </div>
         <div class="searcher">
             <%= render 'search' %>
         </div>
-    </div>
-    <div id="new-school">
-        <%= render 'form', school: @school %>
     </div>
 
     <h1>Schools</h1>

@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: #fff;
 }
 
 body, p, ol, ul, td {
@@ -43,6 +43,7 @@ div.field,
 div.actions {
   margin-bottom: 10px;
 }
+
 
 #notice {
   color: green;

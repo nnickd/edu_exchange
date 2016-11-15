@@ -2,8 +2,9 @@
 
   <div class="nav">
     <div class="links">
-      <%= link_to 'Home', '/' %>
-      <%= link_to 'Index', '/index' %>
+      <%= link_to fa_icon('home'), '/' %>
+      <%= link_to fa_icon('book'), '/index' %>
+      <%= link_to fa_icon('chevron-left'), students_path %>
     </div>
     <div class="searcher">
     <%= render 'search' %>
