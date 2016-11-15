@@ -25,30 +25,26 @@
 
         <h3>Students</h3>
         <% @school.students.each do |student| %>
-        <li>
             <span>
               <%= link_to student.name, student %>
                 <%= link_to fa_icon('pencil'), edit_student_path(student) %>
                 <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %>
             </span>
-        </li>
         <% end %>
 
         <div>
             <h3>Services</h3>
             <% @school.students.each do |student| %>
-            <% if student.school == @school && student.services.length > 0 %>
-            <% student.services.each do |service| %>
-            <li>
-                <span>
-                    <%= link_to service.title, service %>
-                    <%= link_to fa_icon('pencil'), edit_service_path(service) %>
-                    <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </span>
-                <br>
-                <%= service.description %>
-            </li>
-            <% end %>
+              <% if student.school == @school && student.services.length > 0 %>
+                <% student.services.each do |service| %>
+                    <span>
+                        <%= link_to service.title, service %>
+                        <%= link_to fa_icon('pencil'), edit_service_path(service) %>
+                        <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </span>
+                    <br>
+                    <%= service.description %>
+              <% end %>
             <% end %>
             <% end %>
         </div>

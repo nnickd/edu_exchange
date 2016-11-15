@@ -59,10 +59,12 @@ input#searcher {
 #new-school-line {
     display: flex;
     flex-direction: row;
+    margin-left: 7em;
 }
 
 div.actions input, input#school_name, input#school_location {
     height: 41.11px;
+    margin: 0 0.2em;
 }
 
 .list {

@@ -1,47 +1,46 @@
 <div class="container">
-  <div class='nav'>
+    <div class='nav'>
 
-    <div class="links">
-        <%= link_to fa_icon('chevron-left'), @student.school %>
-        <%= link_to fa_icon('home'), '/' %>
-        <%= link_to fa_icon('book'), '/index' %>
+        <div class="links">
+            <%= link_to fa_icon('chevron-left'), @student.school %>
+            <%= link_to fa_icon('home'), '/' %>
+            <%= link_to fa_icon('book'), '/index' %>
+        </div>
+
     </div>
-
-</div>
     <div class="school-contents">
 
+        <h1>Student</h1>
 
-<h1>Student</h1>
+        <span>
+            <strong>Name:</strong>
+            <%= @student.name %>
+        </span>
 
-<span>
-    <strong>Name:</strong>
-    <%= @student.name %>
-</span>
+        <span>
+            <strong>School:</strong>
+            <%= link_to @student.school.name, @student.school %>
+        </span>
 
-<span>
-    <strong>School:</strong>
-    <%= link_to @student.school.name, @student.school %>
-</span>
+        <span>
+            <strong>Bio:</strong>
+            <%= @student.bio %>
+        </span>
 
-<span>
-    <strong>Bio:</strong>
-    <%= @student.bio %>
-</span>
+        <h3>Services</h3>
+        <% @student.services.each do |service| %>
+        <span>
+            <%= link_to service.title, service %>
+            <%= link_to fa_icon('pencil'), edit_service_path(service) %>
+            <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+        <%= service.description %>
+        <% end %>
 
-<h3>Services</h3>
-<% @student.services.each do |service| %>
-  <span>
-    <%= link_to service.title, service %>
-    <%= link_to fa_icon('pencil'), edit_service_path(service) %>
-    <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </span>
-    <%= service.description %>
-<% end %>
+        <h3>New Service</h3>
+        <%= render 'services/form', service: @service %>
 
-<h3>New Service</h3>
-<%= render 'services/form', service: @service %>
+        <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
-
-</div>
+    </div>
 </div>
