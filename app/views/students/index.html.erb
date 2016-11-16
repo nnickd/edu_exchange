@@ -1,18 +1,16 @@
-
 <div class="top-bar">
-  <div class="menu align-left">
-    <%= render 'home/links' %>
-    <li><%= link_to fa_icon('chevron-left'), schools_path %></li>
-    <li><%= link_to fa_icon('chevron-right'), services_path %></li>
-  </div>
-  <div class="menu align-right">
-          <%= render 'search' %>
-  </div>
+    <div class="menu align-left">
+        <%= render 'home/links' %>
+        <li><%= link_to fa_icon('chevron-left'), schools_path %></li>
+        <li><%= link_to fa_icon('chevron-right'), services_path %></li>
+    </div>
+    <div class="menu align-right">
+        <%= render 'search' %>
+    </div>
 </div>
 
 <div class="row align-center small-3">
-<%= render 'table' %>
+    <%= render 'table' %>
 </div>
-
 
 <p id="notice"><%= notice %></p>

@@ -1,35 +1,25 @@
-
-
 <%= form_for(school) do |f| %>
 <button class="button" type="button" data-toggle="create-school">Add a new school</button>
 <div class="dropdown-pane" id="create-school" data-dropdown data-auto-focus="true">
-  <% if school.errors.any? %>
+    <% if school.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
+        <h2><%= pluralize(school.errors.count, "error") %>
+            prohibited this school from being saved:</h2>
 
-      <ul>
-      <% school.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+            <% school.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="columns">
-    <div class="align-center">
+    <div class="columns">
+        <%= f.text_field :name, placeholder: :name %>
+        <%= f.text_field :location, placeholder: :location %>
+        <%= submit_tag @tag, name: f, class: 'button expanded' %>
+    </div>
 
-    <%= f.text_field :name, placeholder: :name %>
-  </div>
-
-  <div class="align-center">
-    <%= f.text_field :location, placeholder: :location %>
-  </div>
-
-  <div class="align-center">
-        <%= submit_tag @tag, name: f, class: 'button' %>
-  </div>
-</div>
-
-<% end %>
+    <% end %>
 
 </div>

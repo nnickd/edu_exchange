@@ -1,34 +1,22 @@
 <%= form_for(bid) do |f| %>
-    <% if bid.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(bid.errors.count, "error") %>
-            prohibited this bid from being saved:</h2>
+<% if bid.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(bid.errors.count, "error") %>
+        prohibited this bid from being saved:</h2>
 
-        <ul>
-            <% bid.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-        </ul>
-    </div>
-    <% end %>
+    <ul>
+        <% bid.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
 
-    <div class="columns">
-        <div class="align-center">
-            <%= f.text_field :title, placeholder: :title %>
-        </div>
-
-        <div class="align-center">
-            <%= f.text_area :description, placeholder: :description %>
-        </div>
-
-        <div class="align-center">
-            <%= f.text_field :student_id, placeholder: :student_id %>
-        </div>
-
-        <%= f.hidden_field :service_id, value: @service.id %>
-
-        <div class="align-center">
-            <%= submit_tag @tag, name: f, class: 'button' %>
-        </div>
-    </div>
-    <% end %>
+<div class="columns">
+    <%= f.text_field :title, placeholder: :title %>
+    <%= f.text_area :description, placeholder: :description %>
+    <%= f.text_field :student_id, placeholder: :student_id %>
+    <%= f.hidden_field :service_id, value: @service.id %>
+    <%= submit_tag @tag, name: f, class: 'button expanded' %>
+</div>
+<% end %>

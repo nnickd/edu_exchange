@@ -13,19 +13,10 @@
 <% end %>
 
 <div class="columns">
-    <div class="align-center">
-        <%= f.text_field :name, placeholder: :name %>
-    </div>
-
+    <%= f.text_field :name, placeholder: :name %>
     <%= f.hidden_field :school_id, value: @school.id %>
+    <%= f.text_area :bio, placeholder: :bio %>
+    <%= submit_tag @tag, name: f, class: 'button expanded' %>
+</div>
 
-    <div class="align-center">
-        <%= f.text_area :bio, placeholder: :bio %>
-    </div>
-
-    <div class="align-center">
-        <%= submit_tag @tag, name: f, class: 'button' %>
-    </div>
-    </div>
-
-    <% end %>
+<% end %>

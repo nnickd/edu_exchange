@@ -1,31 +1,22 @@
 <%= form_for(service) do |f| %>
-    <% if service.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(service.errors.count, "error") %>
-            prohibited this service from being saved:</h2>
+<% if service.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(service.errors.count, "error") %>
+        prohibited this service from being saved:</h2>
 
-        <ul>
-            <% service.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-        </ul>
-    </div>
-    <% end %>
+    <ul>
+        <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
 
-    <div class="columns">
-        <div class="align-center">
-            <%= f.text_field :title, placeholder: :title %>
-        </div>
+<div class="columns">
+    <%= f.text_field :title, placeholder: :title %>
+    <%= f.text_area :description, placeholder: :description %>
+    <%= f.hidden_field :student_id, value: @student.id %>
+    <%= submit_tag @tag, name: f, class: 'button expanded' %>
+</div>
 
-        <div class="align-center">
-            <%= f.text_area :description, placeholder: :description %>
-        </div>
-
-        <%= f.hidden_field :student_id, value: @student.id %>
-
-        <div class="align-center">
-            <%= submit_tag @tag, name: f, class: 'button' %>
-        </div>
-    </div>
-
-    <% end %>
+<% end %>
