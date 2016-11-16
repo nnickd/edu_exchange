@@ -1,10 +1,9 @@
 <div class='top-bar'>
 
-    <div class="top-bar-left">
-        <%= link_to fa_icon('home'), '/'%>
-        <%= link_to fa_icon('book'), '/index' %>
-        <%= link_to fa_icon('chevron-left'), @student.school %>
-        <%= link_to fa_icon('chevron-up'), students_path %>
+    <div class="menu align-left">
+        <%= render 'home/links' %>
+        <li><%= link_to fa_icon('chevron-left'), @student.school %></li>
+        <li><%= link_to fa_icon('chevron-up'), students_path %></li>
     </div>
 
 </div>

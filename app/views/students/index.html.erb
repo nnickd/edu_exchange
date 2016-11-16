@@ -1,15 +1,12 @@
 
 <div class="top-bar">
-  <div class="links" id="mid">
-    <%= link_to fa_icon('home'), '/' %>
-    <%= link_to fa_icon('book'), '/index' %>
-    <%= link_to fa_icon('chevron-left'), schools_path %>
-    <%= link_to fa_icon('chevron-right'), services_path %>
+  <div class="menu align-left">
+    <%= render 'home/links' %>
+    <li><%= link_to fa_icon('chevron-left'), schools_path %></li>
+    <li><%= link_to fa_icon('chevron-right'), services_path %></li>
   </div>
-  <div class="top-bar-right">
-      <ul class="menu">
+  <div class="menu align-right">
           <%= render 'search' %>
-      </ul>
   </div>
 </div>
 

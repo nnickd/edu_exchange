@@ -1,18 +1,17 @@
 <div class='top-bar'>
 
-    <div class="top-bar-left">
-        <%= link_to fa_icon('home'), '/' %>
-        <%= link_to fa_icon('book'), '/index' %>
-        <%= link_to fa_icon('chevron-up'), schools_path %>
+    <div class="menu align-left">
+        <%= render 'home/links' %>
+        <li><%= link_to fa_icon('chevron-up'), schools_path %></li>
     </div>
 
     <div class="top-bar-right">
-      <%= render 'students/drop-form', student: @student %>
+        <%= render 'students/drop-form', student: @student %>
     </div>
 </div>
 <div class="columns align-center">
     <div class="row align-center small-3">
-      <%= render 'school-table' %>
+        <%= render 'school-table' %>
     </div>
 
     <div class="row align-center small-3">
