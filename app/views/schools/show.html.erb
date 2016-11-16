@@ -1,9 +1,9 @@
 <div class='top-bar'>
 
     <div class="top-bar-left">
-        <%= link_to fa_icon('chevron-left'), schools_path %>
         <%= link_to fa_icon('home'), '/' %>
         <%= link_to fa_icon('book'), '/index' %>
+        <%= link_to fa_icon('chevron-up'), schools_path %>
     </div>
 
 </div>
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><%= link_to @school.name, @school %>
+                    <td><%= @school.name %>
                         <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
                         <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <td><%= @school.location %></td>

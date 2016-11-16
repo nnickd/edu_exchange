@@ -2,9 +2,10 @@
     <div class='top-bar'>
 
         <div class="top-bar-left">
-            <%= link_to fa_icon('chevron-left'), @service.student %>
             <%= link_to fa_icon('home'), '/' %>
             <%= link_to fa_icon('book'), '/index' %>
+            <%= link_to fa_icon('chevron-left'), @service.student %>
+            <%= link_to fa_icon('chevron-up'), service_path %>
         </div>
 
     </div>
@@ -25,7 +26,7 @@
 
         <tbody>
             <tr>
-                <td><%= link_to @service.title, @service %>
+                <td><%= @service.title %>
                     <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
                     <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 <td><%= @service.description %></td>
