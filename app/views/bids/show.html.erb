@@ -1,24 +1,48 @@
+
+
+
+
+<div class='top-bar'>
+
+    <div class="top-bar-left">
+        <%= link_to fa_icon('home'), '/' %>
+        <%= link_to fa_icon('book'), '/index' %>
+        <%= link_to fa_icon('chevron-left'), @bid.service %>
+        <%= link_to fa_icon('chevron-up'), bids_path %>
+
+    </div>
+
+</div>
+
+<h1 class="row align-center">Bid</h1>
+
+<div class="row align-center small-3">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Student</th>
+                <th>Service</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <tr>
+                  <td><%= @bid.title%>
+                      <%= link_to fa_icon('pencil'), edit_bid_path(@bid) %>
+                      <%= link_to fa_icon('trash'), @bid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= @bid.description %></td>
+                  <td><%= link_to @bid.student.name, @bid.student %></td>
+                  <td><%= link_to @bid.service.title, @bid.service %></td>
+              </tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @bid.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @bid.description %>
-</p>
-
-<p>
-  <strong>Student:</strong>
-  <%= @bid.student %>
-</p>
-
-<p>
-  <strong>Service:</strong>
-  <%= @bid.service %>
-</p>
-
-<%= link_to 'Edit', edit_bid_path(@bid) %> |
-<%= link_to 'Back', bids_path %>
+</div>

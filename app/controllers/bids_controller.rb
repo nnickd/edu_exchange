@@ -5,11 +5,13 @@ class BidsController < ApplicationController
   # GET /bids.json
   def index
     @bids = Bid.all
+    @search = params[:search]
   end
 
   # GET /bids/1
   # GET /bids/1.json
   def show
+    @bids = Bid.all
   end
 
   # GET /bids/new
@@ -22,6 +24,7 @@ class BidsController < ApplicationController
     @tag = 'Update Bid'
     @service = @bid.service
     @student = @bid.student
+    @bids = @service.bids
   end
 
   # POST /bids
@@ -45,7 +48,7 @@ class BidsController < ApplicationController
   def update
     respond_to do |format|
       if @bid.update(bid_params)
-        format.html { redirect_to @bid.service, notice: 'Bid was successfully updated.' }
+        format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
         format.json { render :show, status: :ok, location: @bid }
       else
         format.html { render :edit }

@@ -12,10 +12,11 @@
             <% @services.each do |service| %>
             <tr>
                 <td><%= link_to service.title, service %>
-                    <%= link_to fa_icon('pencil'), edit_service_path(service) %>
-                    <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <!-- <%= link_to fa_icon('pencil'), edit_service_path(service) %>
+                    <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+                  </td>
                 <td><%= service.description %></td>
-                <td><%= service.student.name %></td>
+                <td><%= link_to service.student.name, service.student %></td>
             </tr>
             <% end %>
         </tbody>

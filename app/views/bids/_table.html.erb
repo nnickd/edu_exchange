@@ -11,14 +11,15 @@
 
         <tbody>
             <% @bids.each do |bid| %>
-            <tr>
-                <td><%= bid.title%>
-                    <%= link_to fa_icon('pencil'), edit_bid_path(bid) %>
-                    <%= link_to fa_icon('trash'), bid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%= bid.description %></td>
-                <td><%= link_to bid.student.name, bid.student %></td>
-                <td><%= link_to bid.service.title, bid.service %></td>
-            </tr>
+          <tr>
+    <td><%= link_to bid.title, bid%>
+        <!-- <%= link_to fa_icon('pencil'), edit_bid_path(bid) %>
+        <%= link_to fa_icon('trash'), bid, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+      </td>
+    <td><%= bid.description %></td>
+    <td><%= link_to bid.student.name, bid.student %></td>
+    <td><%= link_to bid.service.title, bid.service %></td>
+</tr>
             <% end %>
         </tbody>
     </table>

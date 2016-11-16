@@ -4,7 +4,7 @@
         <%= link_to fa_icon('home'), '/' %>
         <%= link_to fa_icon('book'), '/index' %>
         <%= link_to fa_icon('chevron-left'), @service.student %>
-        <%= link_to fa_icon('chevron-up'), service_path %>
+        <%= link_to fa_icon('chevron-up'), services_path %>
     </div>
 
 </div>
@@ -29,7 +29,7 @@
                     <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
                     <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 <td><%= @service.description %></td>
-                <td><%= @service.student.name %></td>
+                <td><%= link_to @service.student.name, @service.student %></td>
             </tr>
         </tbody>
     </table>

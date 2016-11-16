@@ -24,6 +24,8 @@ class ServicesController < ApplicationController
   # GET /services/1/edit
   def edit
     @student = @service.student
+    @services = @student.services
+    @bids = @service.bids
     @tag = 'Update Service'
   end
 
