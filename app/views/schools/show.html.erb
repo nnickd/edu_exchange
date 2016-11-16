@@ -11,25 +11,8 @@
     </div>
 </div>
 <div class="columns align-center">
-    <h1 class="row align-center">School</h1>
     <div class="row align-center small-3">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th colspan="2"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><%= @school.name %>
-                        <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
-                        <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    <td><%= @school.location %></td>
-                </tr>
-            </tbody>
-        </table>
+      <%= render 'school-table' %>
     </div>
 
     <div class="row align-center small-3">

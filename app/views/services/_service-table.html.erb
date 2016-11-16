@@ -1,0 +1,22 @@
+<table>
+  <caption>Service</caption>
+
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Student</th>
+            <th colspan="2"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><%= @service.title %>
+                <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
+                <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= @service.description %></td>
+            <td><%= @service.student.name %></td>
+        </tr>
+    </tbody>
+</table>

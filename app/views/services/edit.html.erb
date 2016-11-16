@@ -9,42 +9,21 @@
 
 </div>
 
-<h1 class="row align-center">Service</h1>
 
 <div class="row align-center small-3">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Student</th>
-                <th colspan="2"></th>
-            </tr>
-        </thead>
+  <%= render 'service-table' %>
+</div>
+<div class="row align-center">
 
-        <tbody>
-            <tr>
-                <td><%= @service.title %>
-                    <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
-                    <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%= @service.description %></td>
-                <td><%= @service.student.name %></td>
-            </tr>
-        </tbody>
-    </table>
+  <%= render 'form', service: @service %>
+
 </div>
 
-<h3 class="row align-center">Bids</h1>
   <div class="row align-center small-3">
   <%= render 'bids/table' %>
 </div>
 
-<div class="row align-center">
-
-    <%= render 'form', service: @service %>
-
-</div>
 
 <p id="notice"><%= notice %></p>
 

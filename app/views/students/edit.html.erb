@@ -9,40 +9,19 @@
 
 </div>
 <div class="columns align-center">
-    <h1 class="row align-center">Student</h1>
     <div class="row align-center small-3">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Bio</th>
-                    <th>School</th>
-                    <th colspan="3"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><%= @student.name %>
-                        <%= link_to fa_icon('pencil'), edit_student_path(@student) %>
-                        <%= link_to fa_icon('trash'), @student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    <td><%= @student.bio %></td>
-                    <td><%= @student.school.name %></td>
-                </tr>
-            </tbody>
-        </table>
+        <%= render 'student-table' %>
     </div>
 
-    <h3 class="row align-center">Services</h3>
     <div class="row align-center small-3">
 
         <%= render 'services/table' %>
     </div>
-    <h3 class="row align-center">Bids</h3>
     <div class="row align-center small-3">
 
         <%= render 'bids/table' %>
     </div>
-    
+
     <div class="row align-center">
         <%= render 'form', student: @student %>
     </div>

@@ -1,0 +1,25 @@
+<table>
+  <caption>Bid</caption>
+
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Student</th>
+            <th>Service</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <tr>
+              <td><%= @bid.title%>
+                  <%= link_to fa_icon('pencil'), edit_bid_path(@bid) %>
+                  <%= link_to fa_icon('trash'), @bid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= @bid.description %></td>
+              <td><%= link_to @bid.student.name, @bid.student %></td>
+              <td><%= link_to @bid.service.title, @bid.service %></td>
+          </tr>
+        </tr>
+    </tbody>
+</table>
