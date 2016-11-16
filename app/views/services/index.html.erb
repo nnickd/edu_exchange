@@ -1,23 +1,20 @@
 <div class="container">
 
-  <div class="top-bar">
-    <div class="links">
-      <%= link_to fa_icon('home'), '/' %>
-      <%= link_to fa_icon('book'), '/index' %>
-      <%= link_to fa_icon('chevron-left'), students_path %>
+    <div class="top-bar">
+        <div class="links">
+            <%= link_to fa_icon('home'), '/' %>
+            <%= link_to fa_icon('book'), '/index' %>
+            <%= link_to fa_icon('chevron-left'), students_path %>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <%= render 'search' %>
+            </ul>
+        </div>
     </div>
-    <div class="top-bar-right">
-        <ul class="menu">
-            <%= render 'search' %>
-        </ul>
-    </div>
-  </div>
 
-<h1 class="row align-center">Services</h1>
-<div class="row align-center small-4">
-<%= render 'table' %>
-</div>
+    <h1 class="row align-center">Services</h1>
+    <%= render 'table' %>
 
-
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 </div>

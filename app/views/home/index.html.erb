@@ -1,17 +1,17 @@
-<div class="row align-center" id="index-box">
+<div class="row">
 
-<div class="flexy">
-<%= link_to 'Schools', schools_path, class: 'row align-center' %>
-<%= render 'schools/table' %>
-</div>
+    <div class="column align-left">
+        <%= link_to 'Schools', schools_path%>
+        <%= render 'schools/table' %>
+    </div>
 
-<div class="flexy">
-<%= link_to 'Students', students_path, class: 'row align-center' %>
-<%= render 'students/table' %>
-</div>
+    <div class="column align-center">
+        <%= link_to 'Students', students_path%>
+        <%= render 'students/table' %>
+    </div>
 
-<div class="flexy">
-<%= link_to 'Services', services_path, class: 'row align-center' %>
-<%= render 'services/table' %>
-</div>
+    <div class="column align-right">
+        <%= link_to 'Services', services_path %>
+        <%= render 'services/table' %>
+    </div>
 </div>

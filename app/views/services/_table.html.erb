@@ -1,21 +1,24 @@
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Student</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="row align-center small-3">
 
-  <tbody>
-    <% @services.each do |service| %>
-      <tr>
-        <td><%= link_to service.title, service %>   <%= link_to fa_icon('pencil'), edit_service_path(service) %>   <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= service.description %></td>
-        <td><%= service.student.name %></td>
+    <table class="hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Student</th>
+            </tr>
+        </thead>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+            <% @services.each do |service| %>
+            <tr>
+                <td><%= link_to service.title, service %>
+                    <%= link_to fa_icon('pencil'), edit_service_path(service) %>
+                    <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= service.description %></td>
+                <td><%= service.student.name %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

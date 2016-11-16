@@ -12,15 +12,21 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @service = Service.new
+    @services = @student.services
+    @tag = 'Create Service'
+
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @tag = 'Create Student'
   end
 
   # GET /students/1/edit
   def edit
+    @school = @student.school
+    @tag = 'Update Student'
   end
 
   # POST /students

@@ -20,6 +20,8 @@ class ServicesController < ApplicationController
 
   # GET /services/1/edit
   def edit
+    @student = @service.student
+    @tag = 'Update Service'
   end
 
   # POST /services

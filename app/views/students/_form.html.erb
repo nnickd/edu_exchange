@@ -15,21 +15,15 @@
     <%= f.text_field :name, placeholder: :name %>
   </div>
 
-  <% if @school.nil? %>
-  <div class="field">
-    <%= f.label :school_id %><br>
-    <%= f.text_field :school_id %>
-  </div>
-<% else %>
+
   <%= f.hidden_field :school_id, value: @school.id %>
-<% end %>
 
   <div class="field">
     <%= f.text_area :bio, placeholder: :bio %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="align-center">
+      <%= submit_tag @tag, name: f, class: 'button' %>
   </div>
 
 <% end %>

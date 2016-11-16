@@ -1,54 +1,41 @@
-<div class="container">
-    <div class='top-bar'>
+<div class='top-bar'>
 
-        <div class="">
-            <%= link_to fa_icon('chevron-left'), schools_path %>
-            <%= link_to fa_icon('home'), '/' %>
-            <%= link_to fa_icon('book'), '/index' %>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-              <%= render 'students/formbar', student: @student %>
-            </ul>
-        </div>
-
+    <div class="top-bar-left">
+        <%= link_to fa_icon('chevron-left'), schools_path %>
+        <%= link_to fa_icon('home'), '/' %>
+        <%= link_to fa_icon('book'), '/index' %>
     </div>
-    <div class="columns align-center">
 
-      <h1 class="row align-center">School</h1>
-        <div class="row align-center">
-            <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
-            <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <strong>Name:</strong>
-            <%= @school.name %>
-            <strong>Location:</strong>
-            <%= @school.location %>
-        </div>
-
-        <h3 class="row align-center">Students</h3>
-        <div class="row align-center">
-            <% @school.students.each do |student| %>
-            <%= link_to student.name, student %>
-            <%= link_to fa_icon('pencil'), edit_student_path(student) %>
-            <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-        </div>
-
-        <h3 class="row align-center">Services</h3>
-        <div class="row align-center">
-            <% @school.students.each do |student| %>
-            <% if student.school == @school && student.services.length > 0 %>
-            <% student.services.each do |service| %>
-            <%= link_to service.title, service %>
-            <%= link_to fa_icon('pencil'), edit_service_path(service) %>
-            <%= link_to fa_icon('trash'), service, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-            <%= service.description %>
-            <% end %>
-            <% end %>
-            <% end %>
-        </div>
-
-    </div>
-    <p id="notice"><%= notice %></p>
 </div>
+<div class="columns align-center">
+  <h1 class="row align-center">School</h1>
+    <div class="row align-center small-3">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= link_to @school.name, @school %>
+                        <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
+                        <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= @school.location %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="row align-center">Students</h3>
+    <%= render 'students/table' %>
+    <h3 class="row align-center">Services</h3>
+    <%= render 'services/table' %>
+
+    <div class="row align-center">
+        <%= render 'students/form', student: @student %>
+    </div>
+</div>
+<p id="notice"><%= notice %></p>

@@ -7,12 +7,16 @@ class SchoolsController < ApplicationController
     @school = School.new
     @schools = School.all
     @search = params[:search]
+    @tag = 'Create School'
   end
 
   # GET /schools/1
   # GET /schools/1.json
   def show
     @student = Student.new
+    @students = @school.students
+    @services = @school.services
+    @tag = 'Create Student'
   end
 
   # GET /schools/new
@@ -22,6 +26,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1/edit
   def edit
+    @tag = 'Update School'
   end
 
   # POST /schools

@@ -11,16 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="columns">
+    <div class="align-center">
+
     <%= f.text_field :name, placeholder: :name %>
   </div>
 
-  <div class="field">
+  <div class="align-center">
     <%= f.text_field :location, placeholder: :location %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="align-center">
+        <%= submit_tag @tag, name: f, class: 'button' %>
   </div>
+</div>
 
 <% end %>
