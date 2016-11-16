@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         <tr>
-            <td><%= @student.name %>
+            <td><%= @student.name %><br>
                 <%= link_to fa_icon('pencil'), edit_student_path(@student) %>
                 <%= link_to fa_icon('trash'), @student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <td><%= @student.bio %></td>

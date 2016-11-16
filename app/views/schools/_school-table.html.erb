@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         <tr>
-            <td><%= @school.name %>
+            <td><%= @school.name %><br>
                 <%= link_to fa_icon('pencil'), edit_school_path(@school) %>
                 <%= link_to fa_icon('trash'), @school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <td><%= @school.location %></td>
