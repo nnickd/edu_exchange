@@ -19,8 +19,8 @@
         <%= link_to fa_icon('trash'), bid, method: :delete, data: { confirm: 'Are you sure?' } %> -->
       </td>
     <td><%= bid.description %></td>
-    <td><%= link_to bid.student.name, bid.student %></td>
     <td><%= link_to bid.service.title, bid.service %></td>
+    <td><%= link_to bid.student.name, bid.student %></td>
 </tr>
             <% end %>
         </tbody>
