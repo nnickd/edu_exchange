@@ -1,4 +1,6 @@
 <%= form_for(bid) do |f| %>
+<button class="button" type="button" data-toggle="create-bid">Make an offer</button>
+<div class="dropdown-pane" id="create-bid" data-dropdown data-auto-focus="true">
     <% if bid.errors.any? %>
     <div id="error_explanation">
         <h2><%= pluralize(bid.errors.count, "error") %>
@@ -32,3 +34,4 @@
         </div>
     </div>
     <% end %>
+</div>

@@ -1,7 +1,8 @@
 
 
 <%= form_for(school) do |f| %>
-
+<button class="button" type="button" data-toggle="create-school">Add a new school</button>
+<div class="dropdown-pane" id="create-school" data-dropdown data-auto-focus="true">
   <% if school.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
@@ -30,3 +31,5 @@
 </div>
 
 <% end %>
+
+</div>

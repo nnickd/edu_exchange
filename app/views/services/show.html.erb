@@ -6,42 +6,43 @@
         <%= link_to fa_icon('chevron-left'), @service.student %>
         <%= link_to fa_icon('chevron-up'), services_path %>
     </div>
+    <div class="top-bar-right">
+        <%= render 'bids/drop-form', bid: @bid %>
+    </div>
 
 </div>
+<div class="columns align-center">
 
-<h1 class="row align-center">Service</h1>
+    <h1 class="row align-center">Service</h1>
 
-<div class="row align-center small-3">
+    <div class="row align-center small-3">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Student</th>
-                <th colspan="2"></th>
-            </tr>
-        </thead>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Student</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
 
-        <tbody>
-            <tr>
-                <td><%= @service.title %>
-                    <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
-                    <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%= @service.description %></td>
-                <td><%= link_to @service.student.name, @service.student %></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <tbody>
+                <tr>
+                    <td><%= @service.title %>
+                        <%= link_to fa_icon('pencil'), edit_service_path(@service) %>
+                        <%= link_to fa_icon('trash'), @service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= @service.description %></td>
+                    <td><%= link_to @service.student.name, @service.student %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<h3 class="row align-center">Bids</h1>
-  <div class="row align-center small-3">
-  <%= render 'bids/table' %>
-</div>
-<div class="row align-center">
-    <%= render 'bids/form', bid: @bid %>
-</div>
+    <h3 class="row align-center">Bids</h1>
+    <div class="row align-center small-3">
+        <%= render 'bids/table' %>
+    </div>
 
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 </div>
