@@ -3,4 +3,5 @@ class School < ApplicationRecord
   validates :name, uniqueness: true
   has_many :students, dependent: :destroy
   has_many :services, through: :students
+  has_many :bids
 end

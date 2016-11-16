@@ -8,7 +8,7 @@
 
 </div>
 <div class="columns align-center">
-  <h1 class="row align-center">School</h1>
+    <h1 class="row align-center">School</h1>
     <div class="row align-center small-3">
         <table>
             <thead>
@@ -30,10 +30,16 @@
     </div>
 
     <h3 class="row align-center">Students</h3>
-    <%= render 'students/table' %>
-    <h3 class="row align-center">Services</h3>
-    <%= render 'services/table' %>
+    <div class="row align-center small-3">
 
+        <%= render 'students/table' %>
+
+    </div>
+    <h3 class="row align-center">Services</h3>
+    <div class="row align-center small-3">
+
+        <%= render 'services/table' %>
+    </div>
     <div class="row align-center">
         <%= render 'students/form', student: @student %>
     </div>

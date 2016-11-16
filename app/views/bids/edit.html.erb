@@ -2,9 +2,11 @@
 <div class="top-bar-left">
     <%= link_to fa_icon('home'), '/' %>
     <%= link_to fa_icon('book'), '/index' %>
-    <%= link_to fa_icon('chevron-left'), students_path %>
+    <%= link_to fa_icon('chevron-left'), @service %>
 </div>
 </div>
 <div class="row align-center">
-    <%= render 'form', student: @student %>
+
+  <%= render 'form', bid: @bid %>
+
 </div>

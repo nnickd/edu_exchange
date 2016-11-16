@@ -1,17 +1,26 @@
-<div class="row">
+<div class="row align-around">
 
-    <div class="column align-left">
-        <%= link_to 'Schools', schools_path%>
+    <div class="column small-3">
+
+        <%= link_to 'Schools', schools_path, class: 'row align-center'%>
         <%= render 'schools/table' %>
     </div>
 
-    <div class="column align-center">
-        <%= link_to 'Students', students_path%>
+    <div class="column small-3">
+
+        <%= link_to 'Students', students_path, class: 'row align-center'%>
         <%= render 'students/table' %>
     </div>
 
-    <div class="column align-right">
-        <%= link_to 'Services', services_path %>
+    <div class="column small-3">
+
+        <%= link_to 'Services', services_path, class: 'row align-center' %>
         <%= render 'services/table' %>
+    </div>
+
+    <div class="column small-3">
+
+        <%= link_to 'Bids', bids_path, class: 'row align-center' %>
+        <%= render 'bids/table' %>
     </div>
 </div>

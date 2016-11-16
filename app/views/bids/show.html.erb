@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bid.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bid.description %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @bid.student %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @bid.service %>
+</p>
+
+<%= link_to 'Edit', edit_bid_path(@bid) %> |
+<%= link_to 'Back', bids_path %>

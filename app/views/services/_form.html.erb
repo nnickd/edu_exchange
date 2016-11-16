@@ -12,25 +12,20 @@
 </div>
 <% end %>
 
-<div class="field">
-    <%= f.text_field :title, placeholder: :title %>
-</div>
+<div class="columns">
+    <div class="align-center">
+        <%= f.text_field :title, placeholder: :title %>
+    </div>
 
-<div class="field">
-    <%= f.text_area :description, placeholder: :description %>
-</div>
+    <div class="align-center">
+        <%= f.text_area :description, placeholder: :description %>
+    </div>
 
-<% if @student.nil? %>
-<div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.text_field :student_id %>
-</div>
-<% else %>
-<%= f.hidden_field :student_id, value: @student.id %>
-<% end %>
+    <%= f.hidden_field :student_id, value: @student.id %>
 
-<div class="align-center">
-    <%= submit_tag @tag, name: f, class: 'button' %>
+    <div class="align-center">
+        <%= submit_tag @tag, name: f, class: 'button' %>
+    </div>
 </div>
 
 <% end %>

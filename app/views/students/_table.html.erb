@@ -1,10 +1,9 @@
-<div class="row align-center small-3">
     <table class="hover">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>School</th>
                 <th>Bio</th>
+                <th>School</th>
             </tr>
         </thead>
         <tbody>
@@ -13,10 +12,9 @@
                 <td><%= link_to student.name, student %>
                     <%= link_to fa_icon('pencil'), edit_student_path(student) %>
                     <%= link_to fa_icon('trash'), student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%= student.school.name %></td>
                 <td><%= student.bio %></td>
+                <td><%= student.school.name %></td>
             </tr>
             <% end %>
         </tbody>
     </table>
-</div>
